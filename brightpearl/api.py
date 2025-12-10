@@ -81,6 +81,7 @@ class BrightPearlAPI(object):
             method="POST", url="https://oauth.brightpearl.com/token/{}".format(self.account),
             data=request_body)
         data = response.json()
+        print("data",data)
         if "access_token" not in data:
             raise ValueError("Expected 'access_token' in the response of refresh_token")
         self.access_token = data["access_token"]
