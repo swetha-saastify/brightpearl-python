@@ -44,6 +44,7 @@ class Connection(object):
         self.rate_limit_management = rate_limit_management
         self._session.headers = {
             "Accept": "application/json",
+            "Content-Type":"application/json",
             "Authorization": "Bearer {}".format(access_token),
             "brightpearl-dev-ref": developer_ref,
             "brightpearl-app-ref": app_ref
