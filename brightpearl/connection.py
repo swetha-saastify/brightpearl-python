@@ -69,7 +69,7 @@ class Connection(object):
                 self._session.headers.update({header_name: header_value})
 
         response = self._session.request(
-            method=method, url=self.get_full_path(url), data=json.dumps(data), stream=stream
+            method=method, url=self.get_full_path(url), json=data, stream=stream
         )
         return self.process_response(response, stream)
 
