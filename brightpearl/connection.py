@@ -100,6 +100,7 @@ class Connection(object):
         :return:
         """
         result = dict()
+        print(response.text)
         if response.status_code in [200, 201, 202, 207]:
             self.rate_limiting(response.headers)
             if not stream:
